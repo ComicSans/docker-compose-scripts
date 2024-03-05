@@ -6,7 +6,7 @@ The script needs these folders:
 ```
 backups (backups are saved here)
 configs (mounted to docker container)
-docker-compose (lsit of docker compose files)
+docker-compose (list of docker compose files)
 ```
 
 ## Mount network shares

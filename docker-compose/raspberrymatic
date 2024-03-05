@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  raspberrymatic:
+    image: ghcr.io/jens-maus/raspberrymatic:latest
+    container_name: ccu
+    privileged: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    volumes:
+      - ../configs/ccu_data:/usr/local:rw
+      - /lib/modules:/lib/modules:ro
+      - /run/udev/control:/run/udev/control
+    networks:
+      default:
+        ipv4_address: 192.168.178.198
+    hostname: homematic-raspi
+networks:
+  default:
+    external: true
+    name: docker-macvlan

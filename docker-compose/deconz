@@ -1,0 +1,29 @@
+version: "2"
+services:
+  deconz:
+    image: deconzcommunity/deconz
+    container_name: deconz
+    restart: always
+    privileged: true
+    volumes:
+      - ../configs/deconz:/opt/deCONZ
+    devices:
+      - /dev/ttyUSB0
+    environment:
+      - DECONZ_BAUDRATE=115200
+      - DECONZ_DEVICE=/dev/ttyUSB0
+      - TZ=Europe/Berlin
+      - DECONZ_VNC_MODE=0
+      - DEBUG_INFO=0
+      - DEBUG_APS=0
+      - DEBUG_ZCL=0
+      - DEBUG_ZDP=0
+      - DEBUG_OTA=0
+    networks:
+      default:
+        ipv4_address: 192.168.178.196
+    hostname: deconz
+networks:
+  default:
+    external: true
+    name: docker-macvlan

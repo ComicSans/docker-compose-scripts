@@ -1,0 +1,28 @@
+version: "3"
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    environment:
+      TZ: 'Europe/Berlin'
+      WEBPASSWORD: ''
+      DNSMASQ_LISTENING: all
+      PIHOLE_UID: 0
+      PIHOLE_GID: 0
+      DNSMASQ_USER: root
+    volumes:
+      - '../configs/pihole/etc:/etc/pihole'
+      - '../configs/pihole/dnsmasq.d:/etc/dnsmasq.d'
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    hostname: pihole
+    networks:
+      default:
+        ipv4_address: 192.168.178.199
+networks:
+  default:
+    external: true
+    name: docker-macvlan
+    enable_ipv6: true

@@ -1,0 +1,21 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ../configs/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    privileged: true
+    healthcheck:
+      test: "curl --fail http://localhost:8123/ || exit 1"
+    networks:
+      default:
+        ipv4_address: 192.168.178.197
+    hostname: homeassistant
+networks:
+  default:
+    external: true
+    name: docker-macvlan

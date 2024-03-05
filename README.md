@@ -20,11 +20,21 @@ You can use a network mounted volume to have a backup. Edit /etc/fstab and add:
 ## Local Setup
 
 * http://192.168.178.1 Fritzbox (DHCP server and internet gateway)
+
 * http://192.168.178.195:8765 MotionEye - camera recorder
 * http://192.168.178.196 deCONZ - used with a ConBee III stick for zigbee
 * http://192.168.178.197:8123 Home Assistant - the main home assistant application
 * http://192.168.178.198 RaspberryMatic - local Homematic IP 
 * http://192.168.178.199 PiHole - local DNS server with ad block
+
+```
+Distributor ID:	Debian
+Description:	Debian GNU/Linux 12 (bookworm)
+Release:	12
+Codename:	bookworm
+```
+
+Raspberry Pi 4 8 GB
 
 ## Helper Scripts
 

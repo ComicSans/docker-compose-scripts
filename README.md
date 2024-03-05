@@ -19,13 +19,12 @@ You can use a network mounted volume to have a backup. Edit /etc/fstab and add:
 
 ## Local Setup
 
-http://192.168.178.1 Fritzbox (DHCP server and internet gateway)
-
-http://192.168.178.195:8765 MotionEye - camera recorder
-http://192.168.178.196 deCONZ - used with a ConBee III stick for zigbee
-http://192.168.178.197:8123 Home Assistant - the main home assistant application
-http://192.168.178.198 RaspberryMatic - local Homematic IP 
-http://192.168.178.199 PiHole - local DNS server with ad block
+* http://192.168.178.1 Fritzbox (DHCP server and internet gateway)
+* http://192.168.178.195:8765 MotionEye - camera recorder
+* http://192.168.178.196 deCONZ - used with a ConBee III stick for zigbee
+* http://192.168.178.197:8123 Home Assistant - the main home assistant application
+* http://192.168.178.198 RaspberryMatic - local Homematic IP 
+* http://192.168.178.199 PiHole - local DNS server with ad block
 
 ## Helper Scripts
 

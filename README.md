@@ -31,7 +31,6 @@ You can use a network mounted volume to have a backup. Edit /etc/fstab and add:
 ### Run a container from a docker-compose file:
 
 ```
-cd docker-compose
 ./run_container.sh <name of docker-compose file>
 ```
 

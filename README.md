@@ -41,7 +41,7 @@ Raspberry Pi 4 8 GB
 ### Run a container from a docker-compose file:
 
 ```
-./run_container.sh <name of docker-compose file>
+./start_container.sh <name of docker-compose file>
 ```
 
 ### Create macvlan  network interfaces

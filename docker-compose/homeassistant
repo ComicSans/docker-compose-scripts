@@ -8,6 +8,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
     restart: unless-stopped
+    stop_grace_period: 30s
     privileged: true
     healthcheck:
       test: "curl --fail http://localhost:8123/ || exit 1"

@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  frigate:
+    container_name: frigate
+    restart: unless-stopped
+    image: ghcr.io/blakeblackshear/frigate:stable-standard-arm64
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ../configs/frigate/config:/config
+      - ../configs/frigate/storage:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    shm_size: "128mb"
+    devices:
+      - /dev/video11:/dev/video11  
+    hostname: frigate
+    privileged: true
+    networks:
+      default:
+        ipv4_address: 192.168.178.195
+networks:
+  default:
+    external: true
+    name: docker-macvlan
+

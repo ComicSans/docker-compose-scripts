@@ -5,8 +5,10 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-docker stop $(docker ps -a -q) 
+docker stop homeassistant
+docker stop mariadb
 
-tar --exclude="backups" --exclude=".git" --exclude="configs/motioneye/cameras" -zcvf "backups/`date -I`.tar.gz" .
+tar --exclude="backups" --exclude=".git" --exclude="configs/frigate/storage" -zcvf "backups/`date -I`.tar.gz" .
 
-docker start $(docker ps -a -q)
+docker start mariadb
+docker start homeassistant

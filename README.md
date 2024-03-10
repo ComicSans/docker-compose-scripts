@@ -21,12 +21,14 @@ You can use a network mounted volume to have a backup. Edit /etc/fstab and add:
 http://192.168.178.1 Fritzbox (DHCP server and internet gateway)
 
 Docker: 
-* http://192.168.178.195:5000 Frigate - camera recorder
-* http://192.168.178.196 deCONZ - used with a ConBee III stick for zigbee
-* http://192.168.178.197:8123 Home Assistant - the main home assistant application
-* http://192.168.178.198 RaspberryMatic - local Homematic IP 
-* http://192.168.178.199 PiHole - local DNS server with ad block
-
+* http://192.168.178.195:5000  Frigate - camera recorder
+* http://192.168.178.196       deCONZ - used with a ConBee III stick for zigbee
+* http://192.168.178.197:8123  Home Assistant - the main home assistant application
+* http://192.168.178.198       RaspberryMatic - local Homematic IP 
+* http://192.168.178.199       PiHole - local DNS server with ad block
+* http://192.168.178.200       MariaDB - database server
+* http://192.168.178.201       Adminer - database administration
+  
 ```
 Distributor ID:	Debian
 Description:	Debian GNU/Linux 12 (bookworm)

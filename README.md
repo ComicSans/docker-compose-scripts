@@ -21,7 +21,7 @@ You can use a network mounted volume to have a backup. Edit /etc/fstab and add:
 http://192.168.178.1 Fritzbox (DHCP server and internet gateway)
 
 Docker: 
-* http://192.168.178.195:8765 MotionEye - camera recorder
+* http://192.168.178.195:5000 Frigate - camera recorder
 * http://192.168.178.196 deCONZ - used with a ConBee III stick for zigbee
 * http://192.168.178.197:8123 Home Assistant - the main home assistant application
 * http://192.168.178.198 RaspberryMatic - local Homematic IP 
@@ -41,7 +41,7 @@ Raspberry Pi 4 8 GB
 ### Run a container from a docker-compose file:
 
 ```
-./start_container.sh <name of docker-compose file>
+./start.sh <name of docker-compose file>
 ```
 
 ### Create macvlan  network interfaces
@@ -61,7 +61,7 @@ This shell script will stop all running containers, tar zip all data and config 
 and save the result in the backups directory. The file will be named as the current date
 (day only, no timestamp):
 ```
-./run_backups.sh
+./backup.sh
 ```
 
 ## Helper applications

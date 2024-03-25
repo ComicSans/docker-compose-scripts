@@ -38,7 +38,7 @@ services:
       - 8080:8080
     networks:
       default:
-        ipv4_address: 192.168.178.201
+        ipv4_address: 192.168.178.194
 networks:
   default:
     external: true

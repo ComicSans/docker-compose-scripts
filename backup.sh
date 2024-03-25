@@ -5,6 +5,8 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+cd "$(dirname "$0")";
+
 docker stop homeassistant
 docker stop mariadb
 

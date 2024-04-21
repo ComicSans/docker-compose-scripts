@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - ../configs/mosquitto/config:/mosquitto/config
+      - ../configs/mosquitto/data:/mosquitto/data
+      - ../configs/mosquitto/log:/mosquitto/log
+    networks:
+      default:
+        ipv4_address: 192.168.178.191
+    hostname: mosquitto
+networks:
+  default:
+    external: true
+    name: docker-macvlan

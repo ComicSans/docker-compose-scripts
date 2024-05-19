@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  diyhue:
+    container_name: diyhue
+    restart: unless-stopped
+    image: diyhue/core:latest
+    volumes:
+      - ../configs/diyhue:/opt/hue-emulator/config
+    hostname: diyhue
+    privileged: true
+    networks:
+      default:
+        ipv4_address: 192.168.178.202
+    environment:
+      - DEBUG=true
+      - MAC=02:42:c0:a8:b2:ca
+      - IP=192.168.189.202
+      - TZ=Europe/Berlin
+networks:
+  default:
+    external: true
+    name: docker-macvlan

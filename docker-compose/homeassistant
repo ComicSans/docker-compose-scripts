@@ -5,10 +5,14 @@ services:
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
       - ../configs/homeassistant:/config
+      - ../configs/cameras:/media/cameras
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
     stop_grace_period: 30s
+    devices:
+      - /dev/ttyUSB0
     privileged: true
     healthcheck:
       test: "curl --fail http://localhost:8123/ || exit 1"

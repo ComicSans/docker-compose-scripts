@@ -31,6 +31,7 @@ Network:
 http://192.168.178.1 (Fritzbox) DHCP server and internet gateway
 
 Docker: 
+* http://192.168.178.191      mosquitto
 * http://192.168.178.195:5000 (Frigate) Camera Recorder
 * http://192.168.178.196      (deCONZ) ZigBee hub (used with ConBee III)
 * http://192.168.178.197:8123 (Home Assistant) The main home assistant application
@@ -38,6 +39,7 @@ Docker:
 * http://192.168.178.199      (PiHole) Local DNS server to clock ads
 * http://192.168.178.200      (MariaDB) Database server
 * http://192.168.178.201      (Adminer) Database administration
+* http://192.168.178.202      DiyHue
 
 Running on a Raspberry Pi 4 with 8 GB RAM and Debian Bookwom. 
 

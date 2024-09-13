@@ -7,10 +7,8 @@ services:
       TZ: 'Europe/Berlin'
       WEBPASSWORD: ''
       DNSMASQ_LISTENING: all
+      ServerIP: '192.168.178.199'
       SKIPGRAVITYONBOOT: 1
-      REV_SERVER_DOMAIN: fritz.box
-      REV_SERVER_TARGET: 192.168.178.1
-      REV_SERVER_CIDR: 192.168.178.0/24
     volumes:
       - '../configs/pihole/etc:/etc/pihole'
       - '../configs/pihole/dnsmasq.d:/etc/dnsmasq.d'
@@ -22,6 +20,7 @@ services:
     networks:
       default:
         ipv4_address: 192.168.178.199
+        ipv6_address: fd01::acab
 networks:
   default:
     external: true

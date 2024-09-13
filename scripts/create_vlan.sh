@@ -16,6 +16,9 @@ docker network create -d macvlan \
   --gateway 192.168.178.1 \
   --ip-range 192.168.178.192/27 \
   --aux-address 'host=192.168.178.223' \
+  --ipv6 \
+  --subnet=fd01::/64 \
+  --gateway=fd01::1 \
   docker-macvlan
 
 ip link add docker-shim link eth0 type macvlan mode bridge
